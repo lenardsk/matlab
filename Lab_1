@@ -1,0 +1,155 @@
+syms a b c d
+A = [a b ; c d]
+ 
+A =
+ 
+[ a, b]
+[ c, d]
+ 
+syms h g p q
+B = [h g ; p q]
+ 
+B =
+ 
+[ h, g]
+[ p, q]
+ 
+C = A*B
+ 
+C =
+ 
+[ a*h + b*p, a*g + b*q]
+[ c*h + d*p, c*g + d*q]
+ 
+D = A*B
+ 
+D =
+ 
+[ a*h + b*p, a*g + b*q]
+[ c*h + d*p, c*g + d*q]
+ 
+a = sym('a');
+sqrt(a^2)
+ 
+ans =
+ 
+(a^2)^(1/2)
+ 
+a = sym('a','positive');
+sqrt(a^2)
+ 
+ans =
+ 
+a
+ 
+%% otrs veids
+syms a b c d
+A = [a b; c d]
+ 
+A =
+ 
+[ a, b]
+[ c, d]
+ 
+A'
+ 
+ans =
+ 
+[       a, conj(c)]
+[ conj(b), conj(d)]
+ 
+
+
+syms x
+y = x^2
+ 
+y =
+ 
+x^2
+ 
+diff(y)
+ 
+ans =
+ 
+2*x
+ 
+diff(x^2)
+ 
+ans =
+ 
+2*x
+ 
+%%sintakse
+syms x y
+z = x^5*y^3;
+diff(z,x)
+ 
+ans =
+ 
+5*x^4*y^3
+ 
+diff(z,y)
+ 
+ans =
+ 
+3*x^5*y^2
+ 
+syms a x
+z = a*x^2;
+diff(z,x)
+ 
+ans =
+ 
+2*a*x
+ 
+diff(z,a)
+ 
+ans =
+ 
+x^2
+syms a b c d real
+A = [a b; c d]
+ 
+A =
+ 
+[ a, b]
+[ c, d]
+ 
+A'
+ 
+ans =
+ 
+[ a, c]
+[ b, d]
+
+int (x^2,x,-3,3)
+ 
+ans =
+ 
+18
+ 
+int (x^2,d,-3,3)
+ 
+ans =
+ 
+6*x^2
+ 
+int (x^2,x,3.14,0)
+ 
+ans =
+ 
+-3869893/375000
+
+int (sin(x),x,3.14,0)
+ 
+ans =
+ 
+cos(157/50) - 1
+ 
+double(int(sin(x)^2,x,0,pi/3))
+
+ans =
+
+    0.3071
+
+
