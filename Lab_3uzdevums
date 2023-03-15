@@ -1,0 +1,14 @@
+%%sinusoiids (lab3 not demo) 
+t_sin=2:0.01:4;
+ A0=3;A=3;T=(5-3.5)/6;f=1/T;
+ delay=3.5;
+ y_sin=A0+A*sin(2*pi*f*(t_sin-delay));
+ plot(t_sin,y_sin)
+ t_sin=2:0.01:4;
+ A0=0.01;A=3;T=(5-3.5)/6;f=1/T;
+ delay=3.5;
+ y_sin=A0+A*sin(2*pi*f*(t_sin-delay));plot(t_sin,y_sin)
+ hold on
+ %%troksnis
+ t_noise = 0.5:0.01:2;
+ y_noise = 1.5*rand(size(t_noise))*1.5;
