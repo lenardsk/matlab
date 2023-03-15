@@ -1,0 +1,53 @@
+y_sin=A0+A*sin(2*pi*f*(t_sin-delay))
+y_sin=A0+A*sin(2*pi*f*(t_sin-delay));
+A0=0; %%līdzkomponente
+A=0.5; %%amplitūda
+T=(5-3.5)/6 %%periods
+f=1/T; %%frekvence
+delay=3.5;
+%%sinuss
+t_sin=3.5:0.01:5;
+A0=0;A=0.5;T=(5-3.5)/6;f=1/T;
+plot(t_sin,y_sin)
+%%amplituuda=1
+t_sin=3.5:0.01:5;
+A0=0;A=1;T=(5-3.5)/6;f=1/T;
+delay=3.5;
+y_sin=A0+A*sin(2*pi*f*(t_sin-delay));
+plot(t_sin,y_sin)
+%%Lineaara funkcija
+k = (0.25-(-0.25))/(1.5-2.5);%%sliipuma koeficents
+%%line(tukshums)
+t_line=1;
+delay=3.5;
+k = (0.25-(-0.25))/(1.5-2.5);
+y_line = k*(t_line-delay);
+plot(t_line,y_line)
+%%lineara_linija_ir.
+hold on %%patur signaalu
+t_line=1:1.5:2.5;%%veeertiba:sakumpunkts:beigupunkts
+delay=3.5;
+k = (0.25-(-0.25))/(1.5-2.5);
+y_line = k*(t_line-delay);
+plot(t_line,y_line)
+%%konstante(neiet)
+t_const = 5:0.01:6;
+y_const = 0.5;
+plot(t_const,y_const)
+%%konstante(iet)
+t_const = 5:0.01:6;
+y_const = zeros(size(t_const))+0.5;
+plot(t_const,y_const)
+hold on
+%%linija_0
+t_zero = 2.5:0.01:3.5;
+y_zero = zeros(size(t_zero))*0;
+plot(t_zero,y_zero)
+%%troksnis
+t_noise = 0:0.01:1.5;
+y_noise = 0.25*rand(size(t_noise))-0.25;
+plot(t_noise,y_noise)
+%%apvienoshana
+t = [t_noise,t_line,t_zero,t_sin,t_const];
+y = [y_noise,y_line,y_zero,y_sin,y_const];
+plot(t,y)
