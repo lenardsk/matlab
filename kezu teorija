@@ -1,0 +1,80 @@
+>> R = 5;
+>> L = 1/(10*pi);
+>> C = 1/(1000*pi);
+>> Uc_m = 10
+
+Uc_m =
+
+    10
+
+>> w = 100*pi;
+>> fi_uC_deg = -30
+
+fi_uC_deg =
+
+   -30
+
+>> fi_uC_rad = fi_uC / 180 * pi
+Undefined function or variable 'fi_uC'.
+ 
+>> fi_uC_rad = fi_uC / 180 * pi;
+Undefined function or variable 'fi_uC'.
+ 
+>> UC_cpx = 10 * (cos(fi_uC_deg / 180 * pi) + j*sin(fi_uC_deg / 180 * pi));%%modulis
+>> UC_cpx = 10 * (cos(fi_uC_deg / 180 * pi) + j*sin(fi_uC_deg / 180 * pi))%%modulis
+
+UC_cpx =
+
+   8.6603 - 5.0000i
+
+>> UC_real = real(8.6603 - 5.0000i)
+
+UC_real =
+
+    8.6603
+
+>> UC_imag = imag(8.6603 - 5.0000i)
+
+UC_imag =
+
+    -5
+
+>> Uc_m = sqrt(8.6603
+ Uc_m = sqrt(8.6603
+                   ↑
+Error: Invalid expression. When calling a function or indexing a variable, use parentheses. Otherwise, check
+for mismatched delimiters.
+ 
+Did you mean:
+>> Uc_m = sqrt(8.6603)
+
+Uc_m =
+
+    2.9428
+
+>> Uc_m = sqrt(8.6603^2 + -5^2)
+
+Uc_m =
+
+    7.0711
+
+>> fi_uC_rad = angle(8.6603 - 5.0000i
+ fi_uC_rad = angle(8.6603 - 5.0000i
+                                   ↑
+Error: Invalid expression. When calling a function or indexing a variable, use parentheses. Otherwise, check
+for mismatched delimiters.
+ 
+Did you mean:
+>> fi_uC_rad = angle(8.6603 - 5.0000i)
+
+fi_uC_rad =
+
+   -0.5236
+
+>> fi_uC_deg =  -0.5236 / pi * 180
+
+fi_uC_deg =
+
+  -30.0001
+
+>> 
