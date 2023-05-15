@@ -1,0 +1,26 @@
+%%*****************************************************MATLAB_LABORS********************************************************************
+>> freq = 165e6;//nepieciešamā frekvence
+>> wirediameter = 19e-3;//vada diametrs
+>> c = physconst('lightspeed');//konstante
+>> lambda = c/freq;//vilņa garums
+>> 
+>> d = dipoleFolded;//dipols locits
+>> d.Length = lambda/2;//formula
+>> d.Width = cylinder2strip(wirediameter/2);//dipola platums
+>> d.Spacing = d.Length/60;// dipola attalums
+>> Numdirs = 4;
+>> refLength = 0.5;
+>> dirLength = 0.5*ones(1,Numdirs);//garums director
+>> refSpacing = 0.3;
+>> dirSpacing = 0.25*ones(1,Numdirs);//attālums starp elementiem
+>> initialdesign = [refLength dirLength refSpacing dirSpacing].*lambda;
+>> yagidesign = yagiUda;
+>> yagidesign.Exciter = d;
+>> yagidesign.NumDirectors = Numdirs;
+>> yagidesign.ReflectorLength = refLength*lambda;
+>> yagidesign.DirectorLength = dirLength.*lambda;
+>> yagidesign.ReflectorSpacing = refSpacing*lambda;
+>> yagidesign.DirectorSpacing = dirSpacing*lambda;
+>> show(yagidesign)//attelo elementu izkaartojumu
+>> fig1 = figure;
+>> pattern(yagidesign,freq);//attelo izotropisko 
